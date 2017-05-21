@@ -1,0 +1,26 @@
+{
+  "name": "didpoule/PageBundle",
+  "description": "This bundle provides a light static pages manager",
+  "license": "MIT",
+  "authors": [
+    {
+      "name": "Jordan Brito - didpoule",
+      "email": "brito.jordan@icloud.com"
+    }
+  ],
+  "require": {
+    "php": ">=5.5.9",
+    "symfony/framework-bundle": "^3.0",
+    "symfony/form": "^3.0",
+    "egeloen/ckeditor-bundle": "^4.0",
+    "symfony/twig-bridge": "3.2.*",
+    "symfony/validator": "3.2.*",
+    "stof/doctrine-extensions-bundle": "^1.2"
+  },
+  "autoload": {
+    "psr-0": {
+      "didpoule\\PageBundle": ""
+    }
+  },
+  "target-dir": "didpoule/PageBundle"
+}

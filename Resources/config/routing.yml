@@ -1,0 +1,13 @@
+didpoule_page_addCategory:
+    path:     /page/addCategory
+    defaults: { _controller: didpoulePageBundle:Page:addCategory }
+
+didpoule_page_add:
+    path:     /page/add
+    defaults: { _controller: didpoulePageBundle:Page:add }
+
+didpoule_page_view:
+    path:     /page/{category}/{slug}
+    defaults: { _controller: didpoulePageBundle:Page:view }
+    requirements:
+        slug: "[a-zA-Z0-9-_/]+"
