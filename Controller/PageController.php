@@ -44,7 +44,10 @@ class PageController extends Controller
 
         $page = new Page();
 
-        $form = $this->createForm(PageType::class, $page, ['user_roles' => $this->get('didpoule_page.roles')]);
+        $form = $this->createForm(PageType::class, $page, [
+            'user_roles' => $this->get('didpoule_page.roles'),
+            'ckeditor_config' => $this->getParameter('didpoule_page.config')['ckeditor']
+        ]);
 
         $form->handleRequest($request);
 

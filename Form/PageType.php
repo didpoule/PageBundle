@@ -31,7 +31,9 @@ class PageType extends AbstractType
                 'required' => false
 
             ))
-            ->add('content', CKEditorType::class)
+            ->add('content', CKEditorType::class, [
+                'config' => $options['ckeditor_config']
+            ])
             ->add('save', SubmitType::class);
     }
 
@@ -39,6 +41,7 @@ class PageType extends AbstractType
     {
         $resolver
             ->setRequired('user_roles')
+            ->setRequired('ckeditor_config')
             ->setDefaults(['data_class' => 'didpoule\PageBundle\Entity\Page']);
     }
 
