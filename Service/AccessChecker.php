@@ -16,15 +16,15 @@ class AccessChecker
         $this->security = $security;
     }
 
-    public function checkAccess(Page $page)
+    public function checkAccess($role)
     {
         if (
-            ($this->security->isGranted('IS_AUTHENTICATED_ANONYMOUSLY') && $page->getRole() === 'anonymous') ||
-            ($this->security->isGranted($page->getRole()))
+            ($this->security->isGranted('IS_AUTHENTICATED_ANONYMOUSLY') && $role === 'anonymous') ||
+            ($this->security->isGranted($role))
         ) {
             return true;
         } else {
-            throw new AccessDeniedException('You are not allowed to access to this page : ' . $page->getTitle());
+            throw new AccessDeniedException('You are not allowed to access to this page.');
         }
     }
 }
