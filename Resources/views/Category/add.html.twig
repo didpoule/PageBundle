@@ -1,15 +1,40 @@
-<!DOCTYPE html>
-<html>
-<head>
-    <meta charset="UTF-8" />
-    <title>{% block title %}Add category{% endblock %}</title>
-    <link rel="icon" type="image/x-icon" href="{{ asset('favicon.ico') }}" />
-</head>
-<body>
+{% extends '@didpoulePage/layout.html.twig' %}
+{% block title %}Add category{% endblock %}
 {% block body %}
-    {% if form is not null %}
-        {{ form(form) }}
-    {% endif %}{% endblock %}
-{% block javascripts %}{% endblock %}
-</body>
-</html>
+    <div class="well">
+        <h2>Add category</h2>
+        {% if form is not null %}
+            {{ form_start(form, { 'attr': { 'class': 'form-horizontal'}}) }}
+            <div class="form-group">
+                {{ form_label(form.title, null, { 'label_attr': {
+                    'class': 'col-sm-1 control-label'
+                }}) }}
+                <div class="col-sm-6">
+                    {{ form_errors(form.title) }}
+                    {{ form_widget(form.title, { 'attr': {
+                        'class': 'form-control'
+                    }}) }}
+                </div>
+            </div>
+            <div class="form-group">
+                {{ form_label(form.description, null, { 'label_attr': {
+                    'class': 'col-sm-1 control-label'
+                }}) }}
+                <div class="col-sm-6">
+                    {{ form_errors(form.description) }}
+                    {{ form_widget(form.description, { 'attr': {
+                        'class': 'form-control'
+                    }}) }}
+                </div>
+            </div>
+            <div class="form-group">
+                <div class="col-sm-offset-7">
+                    {{ form_widget(form.save, { 'attr': {
+                        'class': 'btn btn primary'
+                    }}) }}
+                </div>
+            </div>
+            {{ form_end(form) }}
+        {% endif %}
+    </div>
+{% endblock %}

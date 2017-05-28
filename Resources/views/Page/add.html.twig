@@ -1,61 +1,66 @@
-<link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css">
-<div class="well">
-    <h2>New page</h2>
-    <hr>
-    {% if form is not null %}
-        {{ form_start(form, { 'attr': { 'class': 'form-horizontal'}}) }}
-        <div class="form-group">
-            {{ form_label(form.title, null, { 'label_attr': {
-                'class': 'col-sm-1 control-label'
-            }}) }}
-            <div class="col-sm-6">
-                {{ form_errors(form.title) }}
-                {{ form_widget(form.title, { 'attr': {
-                    'class': 'form-control'
+{% extends '@didpoulePage/layout.html.twig' %}
+{% block title %}New page{% endblock %}
+{% block body %}
+    <div class="well">
+        <h2>New page</h2>
+        <hr>
+        {% if form is not null %}
+            {{ form_start(form, { 'attr': { 'class': 'form-horizontal'}}) }}
+            <div class="form-group">
+                {{ form_label(form.title, null, { 'label_attr': {
+                    'class': 'col-sm-1 control-label'
                 }}) }}
+                <div class="col-sm-6">
+                    {{ form_errors(form.title) }}
+                    {{ form_widget(form.title, { 'attr': {
+                        'class': 'form-control'
+                    }}) }}
+                </div>
             </div>
-        </div>
-        <div class="form-group">
-            {{ form_label(form.categories, null, { 'label_attr': {
-                'class': 'col-sm-1 control-label'
-            }}) }}
-            <div class="col-sm-6">
-                {{ form_errors(form.categories) }}
-                {{ form_widget(form.categories, { 'attr': {
-                    'class': 'form-control'
+            <div class="form-group">
+                {{ form_label(form.categories, null, { 'label_attr': {
+                    'class': 'col-sm-1 control-label'
                 }}) }}
+                <div class="col-sm-6">
+                    {{ form_errors(form.categories) }}
+                    {{ form_widget(form.categories, { 'attr': {
+                        'class': 'form-control'
+                    }}) }}
+
+                </div>
             </div>
-        </div>
-        <div class="form-group">
-            {{ form_label(form.role, null, { 'label_attr': {
-                'class': 'col-sm-1 control-label'
-            }}) }}
-            <div class="col-sm-6">
-                {{ form_errors(form.role) }}
-                {{ form_widget(form.role, { 'attr': {
-                    'class': 'form-control'
+            <div class="form-group">
+                {{ form_label(form.role, null, { 'label_attr': {
+                    'class': 'col-sm-1 control-label'
                 }}) }}
+                <div class="col-sm-6">
+                    {{ form_errors(form.role) }}
+                    {{ form_widget(form.role, { 'attr': {
+                        'class': 'form-control'
+                    }}) }}
+                </div>
             </div>
-        </div>
-        <div class="form-group">
-            {{ form_label(form.content, null, { 'label_attr': {
-                'class': 'col-sm-1 control-label'
-            }}) }}
-            <div class="col-sm-10">
-                {{ form_errors(form.content) }}
-                {{ form_widget(form.content, { 'attr': {
-                    'class': 'form-control'
+            <div class="form-group">
+                {{ form_label(form.content, null, { 'label_attr': {
+                    'class': 'col-sm-1 control-label'
                 }}) }}
+                <div class="col-sm-10">
+                    {{ form_errors(form.content) }}
+                    {{ form_widget(form.content, { 'attr': {
+                        'class': 'form-control'
+                    }}) }}
+                </div>
             </div>
-        </div>
-        <div class="form-group">
-            <div class="col-sm-offset-10">
-                {{ form_widget(form.save, { 'attr': {
-                    'class': 'btn btn-primary'
-                }}) }}
+            <div class="form-group">
+                <div class="col-sm-offset-10">
+                    {{ form_widget(form.save, { 'attr': {
+                        'class': 'btn btn-primary'
+                    }}) }}
+                </div>
             </div>
-        </div>
-        {{ form_end(form) }}
-    {% endif %}
-</div>
+            {{ form_end(form) }}
+        {% endif %}
+    </div>
+{% endblock %}
+
 
