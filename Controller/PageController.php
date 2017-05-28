@@ -60,6 +60,8 @@ class PageController extends Controller
             $em->persist($page);
             $em->flush();
 
+            $this->addFlash('success', 'Page sucessfully created.');
+
             return $this->redirectToRoute('didpoule_page_view', [
                 'category' => $page->getCategories()->first()->getTitle(),
                 'slug' => $page->getSlug()]);
@@ -83,6 +85,8 @@ class PageController extends Controller
             $em = $this->getDoctrine()->getManager();
             $em->persist($category);
             $em->flush();
+
+            $this->addFlash('success', 'Category sucessfully created.');
         }
         return $this->render('@didpoulePage/Category/add.html.twig', [
             'form' => $form->createView()

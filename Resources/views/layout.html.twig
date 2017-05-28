@@ -8,6 +8,15 @@
     {% endblock %}
 </head>
 <body>
+{% if app.session.flashBag is not empty %}
+    {% for type, flashes in app.session.flashBag.all %}
+        {% for flash in flashes %}
+            <div class="alert alert-{{ type }}" role="alert">
+                {{ flash }}
+            </div>
+        {% endfor %}
+    {% endfor %}
+{% endif %}
 {% block body %}
 {% endblock %}
 {% block scripts %}
